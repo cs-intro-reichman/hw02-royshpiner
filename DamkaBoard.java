@@ -8,7 +8,7 @@ public class DamkaBoard {
 			if (i%2==0)
 				System.out.print(" ");
 			System.out.print("*");	
-			for (int j=1; j<=size;j++){
+			for (int j=1; j<size;j++){
 				System.out.print(" *");
 			}
 			System.out.println();
