@@ -33,27 +33,31 @@ public class OneOfEachStats {
 	Double childrens = 0.0;
 
 	for (int i=1;i<=T;i++){
-		int num = 2;
+		int num = 0;
 		double child = generator.nextDouble();
+		num++;
 		boolean boy = (child<=0.5);
 		boolean girl = (child>0.5);
 				while (boy){
 			child = generator.nextDouble();
-			if (child>0.5){
-				break;
-				}		
 			num++;
+			if (child>0.5){
+				boy = false;
+				}		
 		
 	}
-		if (num==2){			while (girl){
+		if (num==1){			while (girl){
 				child = generator.nextDouble();
-				if (child>=0.5){
-					break;
+				num++;
+				if (child<=0.5){
+					girl = false;
 				}
-				num++;	
+				
 			}
 		}
 		childrens += num; 
+
+		
 		if (num==2){
 			twoChildren++;
 		}
